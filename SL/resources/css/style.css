@@ -1,0 +1,1330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*----------------------------*/
+/*----------------------------------------------back-to-top----------------------------------------------*/
+
+/* back to top */
+a.back-top {
+    display: inline-block;
+    height: 70px;
+    width: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* image replacement properties */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: url(img/top.png) no-repeat center 50%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    -moz-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+a.back-top:hover {
+    background-color: aqua;
+}
+    
+a.back-top.back-is-visible, a.back-top.back-fade-out, .no-touch a.back-top:hover {
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+a.back-top, a.back-top:visited, a.back-top:hover {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+a.back-top.back-is-visible {
+    /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;
+}
+
+a.back-top.back-fade-out {
+    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+    opacity: 1;
+}
+/*----------------------------*/
+/*----------------------------------------------header----------------------------------------------*/
+
+header {    
+    background-image:url(img/background.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    width: 1520px;
+}
+
+.logo {   
+    float: left;
+    height: 70px;
+    width: auto; 
+    margin-top: 10px;
+    margin-left: 100px; 
+    margin-right: 65px;
+}
+
+.text-box {   
+    box-sizing: border-box;
+    position: absolute;
+    width: 1140px;
+    top: 38%;
+    left: 40%;
+    transform: translate(-50%, -50%);    
+}
+
+.text-box a{
+    display: inline-block;
+    width: auto;
+    font-size: 25px;
+    padding: 1.2% 4%; 
+    margin-right: 7%;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 1s;    
+}
+
+/*----------------------------*/
+/*----------------------------------------------Navi-Dropdown----------------------------------------------*/
+
+.container1 {     
+    float: left;
+    position: fixed;
+    margin: auto;   
+    z-index: 9;    
+    width: 1520px; 
+    height: 90px;
+    background-color: black;
+}
+/* cha */
+.button {   
+   background-color: black;   
+   color: yellow;
+   padding: 18px;
+   margin-top: 15px;   
+   font-size: 17px;
+   border: none;
+   cursor: pointer;
+   min-width: 150px;
+   text-align: center;
+   -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+   text-decoration: none;
+   overflow: hidden;   
+   border-radius: 10px;               
+}
+
+#click1:hover {    
+    background-color: black;
+    text-decoration: underline;
+}
+
+#click1:active {    
+    color: red;
+    border: none;
+    transform: translateY(15px);
+}
+             
+/* ĐỔi màu nền khi hover và focus Dropdown button */
+
+             
+/* Định dạng các thẻ bao bọc các menu */
+.dropdown {
+   position: relative;
+   display: inline-block;   
+}
+ 
+.dropdown-content
+{
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 200px;   
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;   
+}
+             
+/* Định dạng các thẻ a là các menu con */
+.dropdown-content a {   
+   color: black;
+   font-size: 18px;
+   font-weight: bold;
+   padding: 10px 14px;    
+   text-align: left;
+   text-decoration:none;
+   display: block;      
+}
+             
+/* Thay đổi màu nền khi các menu con được hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+             
+/* Hiển thị menu, ta sẽ dùng javascript để thêm class này vào các nôi dung cần được hiển thị */
+.show {
+    display:block;
+}
+
+/*----------------------------*/
+/*----------------------------------------------h1, h2, h3----------------------------------------------*/
+
+h1, 
+h2, 
+h3 {   
+    font-weight: 200;            
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 300%;
+    font-weight: bold;
+    word-spacing: 4px; 
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 200%;
+    word-spacing: 2px;
+    letter-spacing: 1px; 
+    text-transform: uppercase;
+}
+
+h3 {    
+    font-size: 150%;    
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/*----------------------------*/
+/*----------------------------------------------navi-menu----------------------------------------------*/
+ 
+.search { 
+  float: right; 
+  margin-top: 10px;
+  margin-right: 2px;
+  margin-left:30px;
+  width: 150px;   
+}
+ 
+.nav-menu input[type=text] {  
+  margin-top: 15px;   
+  font-size: 18px;
+  border: none;
+  padding: 6px;
+}  
+
+/*----------------------------*/
+/*----------------------------------------------albume ảnh----------------------------------------------*/
+
+.news-index {
+    float: left;
+    width: 100%;
+    padding: 70px 0;
+}
+
+.news-index .slider-3d {
+    float: left;
+    width: 100%;
+    margin: -80px 0 20px 0px;
+    position: relative;
+}
+
+.Container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1200px;
+}
+
+.Container:before {
+    display: table;
+    content: " ";
+}
+
+.Container:after {
+    clear: both;
+}
+
+.Container:after {
+    display: table;
+    content: " ";
+}
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.title-standard {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 45px;
+    text-align: center;
+    z-index: 1;
+}
+
+.title-standard h4 {
+    color: #ea2227;
+    font-size: 62px;
+    font-family: 'calibri bold';
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.title-standard p {
+    color: #868686;
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 950px;
+    margin-bottom: 25px;
+}
+
+#waterwheelCarousel {
+    width: 1150px;
+    height: 750px;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    background: #FFF;
+    margin: 0 auto;
+}
+
+#waterwheelCarousel .item-waterwheel {
+    display: inline-block;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.news-index .slider-3d #prevCarousel {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    bottom: 0;
+    width: 51px;
+    height: 35px;
+    margin: auto;
+    z-index: 1;
+}
+
+.news-index .slider-3d #nextCarousel {
+    position: absolute;
+    right: -50px;
+    top: 0;
+    bottom: 0;
+    width: 51px;
+    height: 35px;
+    margin: auto;
+    z-index: 1;
+}
+
+
+
+/*----------------------------*/
+/*----------------------------------------------TK button----------------------------------------------*/
+.TK {
+    float: right;
+    margin-right: 30px;
+    
+}
+.TK button { 
+  margin-top: 25px; 
+  padding: 6px 12px;   
+  background: #ddd;  
+  border: none;
+  cursor: pointer;
+} 
+
+.TK button:hover {  
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .search-container {
+    float: none;
+  }
+  .nav-menu a, input[type=text], .TK button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .nav-menu input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+/*----------------------------*/
+/*----------------------------------------------section-features----------------------------------------------*/
+/*----------------------------*/
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 21px;
+    text-align: center;   
+}
+
+.kinhlup {
+    color:black;    
+    font-size: 21px;    
+    margin: auto;
+}
+
+ion-icon {    
+    display: block;       
+    margin-left: 120px;
+    margin-bottom: 10px;
+    font-size: 60px;    
+}
+
+
+
+.icon2 {   
+    color: #f0f00c;    
+}
+
+.icon3 {
+    color: violet;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    
+}
+
+
+.features-detail p {
+    margin-right: 30px;    
+}
+
+.box {
+    padding: 1%;
+}
+.col {
+    display: block;
+    float: left;
+    margin: 1% 1% 1%;
+    border-style: inset;
+    border-color: whitesmoke;
+    border-width: 10px;
+    margin-top: 20px;
+}
+
+
+
+
+/*----------------------------*/
+/*----------------------------------------------slide show ảnh----------------------------------------------*/
+
+         
+/* Slideshow container */
+.slideshow-container {    
+    padding-top: 150px;
+    padding-left: 200px; 
+    max-width: 755px;
+    position: relative;
+    margin-top: 0px;
+    
+   
+    
+}
+
+/* Ẩn các slider */
+.mySlides {
+  display: none;
+   
+}
+
+/* Định dạng nội dung Caption */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* định dạng các chấm chuyển đổi các slide */
+.dot {
+    cursor:pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;    
+}
+
+/* khi được hover, active đổi màu nền */
+.active, 
+.dot:hover {
+    background-color: #717171;    
+}
+
+/* Thêm hiệu ứng khi chuyển đổi các slide */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 4s;
+    animation-name: fade;
+    animation-duration: 4s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .5} 
+    to {opacity: 3}
+}
+
+@keyframes fade {
+    from {opacity: .5} 
+    to {opacity: 3}
+}
+
+/*----------------------------*/
+/*----------------------------------------------nút tham gia----------------------------------------------*/
+.nav:link, 
+.nav:visited {
+    float: left;
+    margin-top: 200px;     
+    display: inline-block;
+    padding: 20px 40px;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    font-size: 25px;
+}
+
+.button-A:link, 
+.button-A:visited {
+    margin-top: 0px;
+    float: left;
+    background-color: #ff983e;
+    border: 1px solid #e67e22;
+    color:#fff;
+}
+
+.nav:hover,
+.nav:active {
+    background-color: #cf6d17;
+}
+
+.button-A:hover,
+.button-A:active {
+    border: 1px solid #cf6d17;
+}
+/*--------------------đăng ký----------------------*/
+.container3 
+{
+    width: 50%;
+    margin: auto;    
+}
+
+.modal {
+    display: none;
+    width: 50%;
+	margin-top: 150px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+    position: fixed;
+    z-index: 1;
+}
+
+input[type=text] {
+    width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+         
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+     
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    font-size: 25px;
+}
+
+.baiviet-header {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 180px;
+    display: block;
+}
+
+.small-icon {
+    margin: auto;
+    padding-right: 7px;    
+    font-size: 15px;
+    color: black; 
+    display: inline-block;
+}
+
+.pic {   
+    float: left; 
+    padding-top: 50px;     
+    padding-right: 50px;
+}
+
+.baiviet-header p {    
+    padding-left: 25px;
+    padding-top: 20px;
+    font-size: 21px;
+    padding-bottom: 50px;
+}
+
+.baiviet {
+    text-align: center;
+    max-width: 900px;
+    margin-left: 200px;
+    background-color: antiquewhite;
+    padding-right: 150px;
+   
+}
+
+.clearfix, .mh-clearfix {
+    display: block;
+}
+
+.mh-wrapper {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 25px;
+    background-color: azure;
+    border-style: solid;
+   
+    
+}
+
+.clearfix:after, .mh-clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;   
+}
+
+strong {
+  font-weight: 700;
+  font-style: bold;
+  font-size: 1em;
+}
+.line1 {
+  display: grid;
+  grid-template-columns: 20% 20% 45%;
+  margin-left: 100px;
+  margin-right: 20px; 
+}
+.servicebox {
+  display: grid;
+  grid-template-rows: 36% 20%;
+}
+.div2 {
+  padding-left: 20px;
+  margin-left: 30px;
+}
+.part2 {
+  display: grid;
+  grid-template-columns: 20%;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+.HEAD {
+    margin-left: 5rem;
+    margin-top: 350px;
+    color: burlywood;
+    margin-bottom: 100px;
+    text-align: center;
+    margin-right: 50px;   
+    color: red;
+}
+.HEAD2 {
+  text-align: center;
+  color: aliceblue;
+  font-size: 52px;
+  height: 100px;
+  width: 700px;
+  padding-top: 20px;
+  margin-left: 400px;    
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: red;
+}
+.noidung p {
+    float: right;
+    text-align: left;
+    width: 47%;
+    font-size: 21px;
+    margin-top: 20px;
+}
+
+
+
+.photos-ve-niem-tin{
+    float: left;
+    height: 500px;
+    width: 650px;
+    margin-left: 50px;
+    margin-top:100px; 
+    
+}
+.phan3 a {
+  text-decoration: none;
+  color: rgb(153, 149, 140);
+  font-style: bold;
+}
+.phan3 a:hover {
+  color: darkslateblue;
+}
+.phan3 {
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  font-size: 14px;
+  justify-content: space-between;
+  border-style: solid;
+  margin-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.phan3 img {
+  margin-left: 1em;
+}
+.slideshow-container {
+  width: 1000px;
+  max-height: 1000px;
+  position: relative;
+  /* margin: auto; */
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+@media screen and (min-width: 777px) {
+  body {
+    max-width: 1500px;
+  }
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/*----------------------------------------------grid----------------------------------------------*/
+
+.grid-containerPlus {
+  margin-top: 400px;
+  display: grid;
+  background-image: url(img/gradient.png);
+  background-size: cover;
+  grid-template-columns: auto auto; 
+  padding: 80px;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+.grid-item {    
+  float: left;
+  background-color: rgba(0,0,0,0.5)
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: aliceblue;
+  padding: 20px;
+  font-size: 20px;
+  text-align: left;
+}
+/*----------------------------------------------footer----------------------------------------------*/
+
+
+.icon-app {
+    margin: auto;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: azure;
+}
+
+#facebook:hover {
+    background-color: white;
+    color: #0037b4;
+}
+
+#facebook:active { 
+    transform: translateY(5px);
+}
+
+#twitter:hover {
+    background-color: #2cc7db;
+    color: white;
+}
+
+#twitter:active { 
+    transform: translateY(5px);
+}
+
+#youtube:hover {
+    background-color: white;
+    color: #f72f00;
+}
+
+#youtube:active { 
+    transform: translateY(5px);
+}
+
+
+
+.Baiviet p {
+    text-align: left;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    margin-left: 200px; 
+    padding: 10px 521px;  
+}
+
+h4 {    
+  padding-top: 15px;
+  color: white;
+  font-size: 30px;
+  font-family: Calibri;
+  text-transform: uppercase;  
+  font-weight: bold; 
+}
+
+h5 { 
+  padding-top: 15px;
+  color: black;
+  font-size: 20px;
+  font-family: Calibri;
+  text-transform: uppercase;
+  margin: 0px 0px 24px 0;
+  font-weight: bold;  
+  text-align: left;   
+}
+
+.footer {      
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+}
+body {  
+  color: #000000;
+  font-family: "calibri", "Roboto", sans-serif;
+}
+.img {    
+  display: grid;
+  grid-template-columns: 10% 10%;
+
+}
+.img2 {
+  padding-left: 10px;
+}
+
+* li {  
+  font-weight: bold;
+  color: azure;
+  font-size: 18px;  
+  line-height: 2;
+  list-style-type: none;
+}
+* li:hover {
+  color: #ea2227;
+  cursor: pointer;
+}
+.btn-send { 
+  margin: auto;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  color: red;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: 1px solid #ea2227;
+  background: #fff;
+  font-family: "calibri bold";  
+}
+button:hover {
+  color: whitesmoke;
+  background-color: #ea2227;
+}
+
+.inputemail {
+  height: 30px;  
+  color: #585656;
+  font-size: 14px;
+  font-weight: 400;
+  float: left;
+}
+
+.icon p {
+    font-size: 18px;
+    font-weight: bold;
+    color: azure;
+}
+
+.row-feature-detail {
+    float: left;
+    width: 45%;
+    margin-left: 50px;
+    font-size: 20px;
+    color: black;    
+    font-size: 18px;
+}
+
+.section-features {
+    max-width: 1520px;
+    height: 350px;    
+    color: aliceblue;
+    margin-left: 60px;
+    margin-right: 40px;
+}
+
+.nameslideshow {
+    text-align: left;
+    width: 1200px;    
+}
+
+.niemtin3 {
+  height: 450px;
+    width: 1520px;
+    margin-top: 30px;
+}
+
+.row1 {
+    margin-top: 40px;
+}
+
+.row2 {
+    margin-top: 40px;
+}
+
+.row3 {
+    margin-top: 40px;
+}
+
+.row4 {
+    margin-top: 40px;
+}
+
+.row5 {
+    margin-top: 40px;
+}
+
+
+
+.footertag {
+    color: aliceblue;
+    margin-top: 60px;
+    width: 380px;
+    text-align: left;
+}
+
+.click {
+    color: aquamarine;
+}
+
+.tenbaiviet { 
+    margin-left: 200
+    width: 1100px;
+    background-image: url(img/menu.png);
+    width: 1100px;
+    height: 50px;
+    padding-top: 10px;
+    color: aliceblue;
+}
+
+.yeuthuong {
+    margin-top: 250px;
+    height: 300px;
+    width: 300px;
+    float: right;
+}
+
+.yeuthuong {
+    height: 400px;
+    width: 400px;
+}
+
+.slider-3d img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+.love {
+    float: right;
+    height: 500px;
+    width: 450px;    
+    margin-right: 70px;
+}
+
+.div3 {    
+    margin-left: 150px;
+    float: right;
+    border-left-color: burlywood;
+    border-left-width: 10px;
+    border-style: solid;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;    
+}
+
+.div4 {
+    float: right;
+    height: 450px;
+    width: 450px;
+}
+
+.niemtin4 {
+     height: 150px;
+    width: 160px;
+    margin-top: 60px;
+    margin-left: 10px;
+}
+
+.tieude {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 40px;
+}
+
+.bantay {
+    margin-top: 50px;
+    width: 1520px;
+}
+
+.thauhieuvachiase {
+    color: aliceblue;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.sechia {
+    height: 140px;
+    width: 140px;
+    float: left;
+    margin-right: 40px;
+}
+
+.timkiem {
+    float: left;
+    margin-left: 220px;
+    margin-top: 25px;
+    margin-right: 30px;   
+}
+
+.tenhoatdong {
+    max-width: 1520px;
+    color: red;
+        font-size: 55px;
+
+}
+
+.Hoatdong {
+    background-image: url(img/menu.png);
+    width: 1480px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+h6 {
+   padding-top: 70px;
+   text-align: center;
+   font-weight: bold;
+   color: cornflowerblue;
+   font-size: 35px;
+}
+
+.noidung a {
+    float: right;
+    margin-right: 50px;
+    color: blue;
+}
+
+.servicebox p {    
+    font-size: 17px;       
+}
+
+/*--------------------------------------------------------------------------------------------*/
+/*----------------------------------------------Story----------------------------------------------*/
+
+.cauchuyen1 {
+    width: 650px;
+    float: right;
+    font-size: 20px;
+    margin-right: 70px;
+}
+
+.tencauchuyen1 {
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+.tretuky1 {
+    width: 500px;
+    height: 400px;
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    border-left-style: solid;
+    border-left-color: brown;
+    border-width: 7px;
+    padding-left: 30px;
+}
+
+.nhungcauchuyen {
+    margin-top: 10px;
+    margin-bottom: 55px;
+    color: red;
+    text-align: center;
+}
+
+.minhhoaanh {
+    float: left;
+    margin-left: 130px;
+    margin-top: 30px;
+    margin-bottom: 
+    font-size: 20px;
+    color: brown;
+}
+
+.cauchuyen2 {
+    width: 650px;
+    float: left;
+    font-size: 20px;
+    margin-left: 70px;
+    margin-top: 150px;
+    margin-bottom: 0px;
+}
+
+.trekhiemthinh2 {
+    width: 550px;
+    height: 400px;
+    float: right;
+    margin-right: 60px;
+    margin-top: 150px;
+    border-right-style: solid;
+    border-right-color: brown;
+    border-width: 7px;
+    padding-right: 30px;
+}
+
+.tencauchuyen2 {
+    margin-bottom: 30px;
+}
+
+.minhhoaanh2 {
+    float: right;
+    margin-right: 100px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: brown;
+    
+}
+
+.tencauchuyen3 {
+    
+}
+
+.cauchuyen3 {
+    width: 650px;
+    float: right;
+    font-size: 20px;
+    margin-right: 70px;
+    margin-top: 200px;    
+}
+
+.trebainao3 {
+    width: 500px;
+    height: 400px;
+    float: left;
+    margin-left: 100px;
+    margin-top: 190px;
+    border-left-style: solid;
+    border-left-color: brown;
+    border-width: 7px;
+    padding-left: 30px;    
+}
+
+.phan2cauchuyen {
+    
+}
+
+.phan3cauchuyen {
+    width: 1500px;
+    height: 500px;
+}
+
+.phanhaicauchuyen {
+    
+}
+
+.trekhiemthinh {
+    height: 400px;
+    width: 500px;
+    float: left;
+}
+
+.trekhiemthinh3 {
+    height: 400px;
+    width: 500px;
+    float: left;
+}
+
+.minhhoaanh3 {
+    float: left;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-top: 30px;
+    color: brown;
+}
+
+.minhhoahinhanh2 {
+    color: brown;
+    float: right;
+    margin-right: 130px;
+    margin-top: 10px;
+}
+
+.caytinhthuong {
+    height: 500px;
+    width: 400px;
+    margin-left: 550px;
+    margin-top: 50px;  
+}
+
+.loiketthuc {
+    width: 1520px;
+    height: 400px;
+    text-align: center;
+    font-size: 25px;
+    padding-left: 200px;
+    padding-right: 200px;
+    color: brown;    
+    font-style: italic;    
+}
+
+.sumenh {
+    color: red;
+    font-size: 55px;
+    text-align: center;    
+}
+
+.caccauchuyen {
+    width: 1520px;
+    height: 1000px;
+    margin-bottom: 150px;
+    padding-bottom: 800px;
+}
+
+.tamnhin {
+     height: 400px;
+    width: 650px;
+    margin-left: 430px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.loinoitamnhin {
+     width: 1520px;
+    height: 200px;
+    text-align: center;
+    font-size: 22px;
+    font-style: italic;
+    padding-left: 200px;
+    padding-right: 200px;
+    color: brown;
+    font-size: 25px;
+}

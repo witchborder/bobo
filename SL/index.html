@@ -1,0 +1,854 @@
+<html lang="en">
+    
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="resources/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/css/grid.css">
+    <link rel='stylesheet'type='text/css'href="resources/css/style.css">
+    
+        
+    <title>Tổ Chức Niềm Tin</title>
+</head>
+    
+<body> 
+    
+    <header> 
+        <a href="#" class="back-top"></a>            
+
+        <script> 
+            jQuery(document).ready(function($){            
+                var offset = 300,            
+                offset_opacity = 1200,            
+                scroll_top_duration = 700,            
+                $back_to_top = $('.back-top');
+            
+            $(window).scroll(function(){
+                ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('back-is-visible') : $back_to_top.removeClass('back-is-visible back-fade-out');
+                if( $(this).scrollTop() > offset_opacity ) {
+                $back_to_top.addClass('back-fade-out');
+                }
+            });
+            
+            $back_to_top.on('click', function(event){
+                event.preventDefault();
+                $('body,html').animate({
+                scrollTop: 0 ,
+                }, scroll_top_duration
+                );
+            });
+
+            });   
+        </script> 
+        
+        
+        <ul class="nav-menu">
+                      
+                        
+            <div class="container1">                
+                
+                <img src="resources/img/logo_niemtin.jpg" alt="Niem_tin Logo" class="logo"> 
+                
+                <div class="TK">
+                            <form action="#">
+                                <button type="submit"><ion-icon name="search-outline" class="kinhlup"></ion-icon></button>
+                            </form> 
+                        </div>
+            
+                        <div class="search">
+                            <form action="#">                      
+                                <input type="text" placeholder="Tìm kiếm..."name ="search" >                  
+                            </form>                 
+                        </div> 
+                
+                <div class="dropdown">
+                        <button value="home" class="button" id="click1">TRANG CHỦ</button>
+                    
+                        <div id="home" class="dropdown-content">                           
+                        </div>
+                </div>                
+                
+                <div class="dropdown">                    
+                        <button value="introduce" class="button" id="click1">GIỚI THIỆU</button>
+                    
+                        <div id="introduce" class="dropdown-content">
+                            <a href="#">Tài chính</a>
+                            <a href="#">Thành viên</a>
+                            <a href="#">Ban chủ nhiệm</a>                          
+                        </div>
+                </div>
+                <div class="dropdown">                    
+                        <button value="activity" class="button" id="click1">HOẠT ĐỘNG</button>
+                    
+                        <div id="activity" class="dropdown-content">
+                            <a href="#">Dự án</a>
+                            <a href="#">Quy chế</a>                            
+                        </div>
+                </div>
+                <div class="dropdown">
+                        <button value="child" class="button" id="click1">TRẺ EM</button>
+                    
+                        <div id="child" class="dropdown-content"> 
+                            <a href="#">Trẻ tự kỷ</a>
+                            <a href="#">Trẻ khiếm thính</a>
+                            <a href="#">Trẻ tổn thương não</a> 
+                            <a href="#">Trẻ hội chứng Down</a>
+                            <a href="#">Trẻ ADHD</a>
+                            <a href="#">Khác</a>
+                        </div>
+                </div>
+                
+                <div class="dropdown">                    
+                    
+                        <button value="story" class="button" id="click1">CÂU CHUYỆN</button>
+                    
+                        <div id="story" class="dropdown-content">                           
+                        </div>
+                </div>
+                <div class="dropdown">                    
+                        <button value="contact" class="button" id="click1">LIÊN HỆ</button>
+                    
+                        <div id="contact" class="dropdown-content">                           
+                        </div>
+                </div> 
+                                
+            </div>
+     
+            
+          
+                    
+        </ul>        
+        
+        <Script>     
+        function myFunction(id) {
+            document.getElementById(id).classList.toggle("show");
+        }        
+        var buttons = document.getElementsByClassName('button');        
+        var contents = document.getElementsByClassName('dropdown-content');        
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function(){                
+                var id = this.value;               
+                for (var i = 0; i < contents.length; i++) {
+                    contents[i].classList.remove("show");
+                }                
+                myFunction(id);
+            });
+        }        
+        window.addEventListener("click", function(){
+             if (!event.target.matches('.button')){
+                for (var i = 0; i < contents.length; i++) {
+                    contents[i].classList.remove("show");
+                }
+             }
+        });
+    
+        </Script>       
+        
+                   
+        <div class="text-box">
+            <h1> MINH BẠCH <br> BỀN VỮNG <br> PHÁT TRIỂN             
+            </h1>
+            <a class="nav button-A" id="myBtn" href="#">Chung tay</a> 
+            
+        </div>
+            
+        <div class="container3">                    
+                        
+                                   
+            
+                <div id="myModal" class="modal">                      
+                        <form action="#">
+                            <span class="close">&times;</span> 
+                            <label for="fname">Họ Và Tên</label>
+                                <input type="text" id="name" name="name" placeholder="Nhập họ và tên...">
+
+                            <label for="lname">Email</label>
+                                <input type="text" id="email" name="email" placeholder="Nhập email...">
+
+                            <label for="country">Số Điện Thoại</label>
+                                <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại...">
+
+                            <label for="address">Địa Chỉ</label>
+                                <input type="text" id="address" name="address" placeholder="Nhập địa chỉ...">
+
+                            <input type="submit" value="Đăng ký">
+                        </form>
+                </div> 		             
+        </div>                      
+            
+         <script>
+            // lấy phần Modal
+            var modal = document.getElementById('myModal');
+         
+            // Lấy phần button mở Modal
+            var btn = document.getElementById("myBtn");
+         
+            // Lấy phần span đóng Modal
+            var span = document.getElementsByClassName("close")[0];
+         
+            // Khi button được click thi mở Modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }         
+            
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+         
+            // Khi click ngoài Modal thì đóng Modal
+            win.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        
+    </header>
+    
+        
+    <div class="news-index">
+        <div class="Container">
+        <div class="title-standard">
+        <h4>HOẠT ĐỘNg - SỰ KIỆN</h4>
+        <p>
+        Hãy cập nhật những dự án và chương trình mới nhất của chúng tôi. Và đồng hành lan tỏa những điều thiện!</p>
+        </div>
+        <div class="slider-3d">
+        <div id="waterwheelCarousel" style="position: relative;">
+    	        <a href="/nam-2020-khoi-dong-chuong-trinh-tai-tro-kham-tam-soat-suc-khoe-va-cap-thuoc-mien-phi-cho-32000-nguoi-ngheo-tren-khap-ca-nuoc-nd77870.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/20190804093715-1593580086.jpg" id="item-1" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;" class="">
+                <div class="title">
+                    <h4>
+                        Năm 2020: Khởi động chương trình tài trợ khám, tầm soát sức khỏe và cấp thuốc miễn phí cho 32.000 người nghèo trên khắp cả nước</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/20-thi-sinh-khiem-thi-hao-huc-duoc-tang-dien-thoai-thong-minh-vinsmart-nd77869.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/2-1593419625.jpg" id="item-2" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;" class="">
+                <div class="title">
+                    <h4>
+                        20 thí sinh khiếm thị háo hức được tặng điện thoại thông minh VinSmart</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/chuyen-xe-anh-sang-gieo-niem-vui-toi-ba-con-ngheo-xu-nghe-nd77868.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/3-1592395052.jpg" id="item-3" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;" class="">
+                <div class="title">
+                    <h4>
+                        “Chuyến xe ánh sáng” gieo niềm vui tới bà con nghèo xứ Nghệ</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/trien-khai-tap-huan-kien-thuc-ve-benh-tan-mau-bam-sinh-tai-tinh-tuyen-quang-nd77867.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/bac-sy-van-1591678230.jpg" id="item-4" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;" class="">
+                <div class="title">
+                    <h4>
+                        Triển khai tập huấn kiến thức về bệnh tan máu bẩm sinh tại tỉnh Tuyên Quang</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/khoi-cong-diem-truong-mo-uoc-tai-kon-tum-nd77866.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/nghe-an-5-1591075809.jpg" id="item-5" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;" class="">
+                <div class="title">
+                    <h4>
+                        Khởi công điểm trường mơ ước tại Kon Tum</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/kham-phuc-nghi-luc-vuon-len-cua-nhung-ban-nho-khuyet-tat-mo-coi-nd77865.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/730b2fbe6902935cca136-1590744726.jpg" id="item-6" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;" class="">
+                <div class="title">
+                    <h4>
+                        Khâm phục nghị lực vươn lên của những bạn nhỏ khuyết tật, mồ côi</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/khoi-cong-diem-truong-mo-uoc-o-xa-vung-cao-giap-lao-nd77864.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/huoi-lui-6-1590402796.jpg" id="item-7" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;" class="">
+                <div class="title">
+                    <h4>
+                        Khởi công điểm trường mơ ước ở xã vùng cao giáp Lào</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/son-la-khoi-cong-xay-dung-diem-truong-uoc-mo-o-xa-vung-cao-bien-gioi-nd77863.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/hang-mon---yen-chau---son-la-5-1590401721.jpg" id="item-8" style="display: inline; left: 52.5px; top: 252.5px; visibility: visible; position: absolute; z-index: 2; opacity: 0.64; width: 245px; height: 245px;" class="">
+                <div class="title">
+                    <h4>
+                        Sơn La: Khởi công xây dựng điểm trường ước mơ ở xã vùng cao biên giới</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/hang-tram-hoc-sinh-tai-binh-dinh-co-co-hoi-hoc-boi-mien-phi-nd77862.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/binh-dinh-1-1589865690.jpg" id="item-9" style="display: inline; left: 150px; top: 200px; visibility: visible; position: absolute; z-index: 3; opacity: 0.8; width: 350px; height: 350px;" class="">
+                <div class="title">
+                    <h4>
+                        Hàng trăm học sinh tại Bình Định có cơ hội học bơi miễn phí</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/tiep-tuc-ban-giao-dua-vao-su-dung-be-boi-cho-02-tinh-quang-ngai-quang-nam-nd77861.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/quang-ngai-3-1589255626.jpg" id="item-10" style="display: inline; left: 325px; top: 125px; visibility: visible; position: absolute; z-index: 4; opacity: 1; width: 500px; height: 500px;" class="carousel-center">
+                <div class="title">
+                    <h4>
+                        Tiếp tục bàn giao, đưa vào sử dụng bể bơi cho 02 tỉnh Quảng Ngãi, Quảng Nam</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+                <a href="/su-menh-cong-loa-len-non-nd77860.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/ef4a578fcdfc36a26fed-1-1589017666.jpg" id="item-11" style="display: inline; left: 650px; top: 200px; visibility: visible; position: absolute; z-index: 3; opacity: 0.8; width: 350px; height: 350px;">
+                <div class="title">
+                    <h4>
+                        Sứ mệnh cõng loa lên non</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/le-ban-giao-dai-truyen-thanh-co-so-ung-dung-cong-nghe-thong-tin-vien-thong-cho-xa-chieng-phung-son-la-nd77859.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/e19751de4ddeb680efcf-1-1588934119.jpg" id="item-12" style="display: inline; left: 852.5px; top: 252.5px; visibility: visible; position: absolute; z-index: 2; opacity: 0.64; width: 245px; height: 245px;">
+                <div class="title">
+                    <h4>
+                        Lễ bàn giao Đài truyền thanh cơ sở ứng dụng công nghệ thông tin - viễn thông cho xã Chiềng Phung (Sơn La)                </h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/no-luc-cung-cong-dong-chung-tay-day-lui-can-benh-tan-mau-bam-sinh-thalassemia-nd77858.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/nu-cuoi-1588826191.jpg" id="item-13" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;">
+                <div class="title">
+                    <h4>
+                        Nỗ lực cùng cộng đồng chung tay đẩy lùi căn bệnh Tan máu bẩm sinh (Thalassemia)                </h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/khanh-thanh-be-boi-phong-chong-duoi-nuoc-dau-tien-trong-mua-he-nam-nay-nd77857.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/nh-2-1588740690.jpg" id="item-14" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;">
+                <div class="title">
+                    <h4>
+                        Khánh thành bể bơi phòng chống đuối nước đầu tiên trong mùa hè năm nay</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	        <a href="/nhung-dong-gop-tham-lang-trong-dai-dich-covid-19-nd77856.html" class="item-waterwheel">
+                <img src="http://quythientam.com/mediacenter//media/images/2427/news/ava/s600_600/chua-buu-nghiem-1587723607.jpg" id="item-15" style="display: inline; left: 489.25px; top: 289.25px; visibility: visible; position: absolute; z-index: 1; opacity: 0; width: 171.5px; height: 171.5px;">
+                <div class="title">
+                    <h4>
+                        Những đóng góp thầm lặng trong đại dịch Covid - 19</h4>
+                    <p>
+                                        </p>
+                </div>
+                </a>
+       	    </div>
+        <div id="prevCarousel">
+            <img src="resources/css/img/arrow-left.png" alt="">
+        </div>
+        <div href="#" id="nextCarousel">
+            <img src="resources/css/img/arrow-right.png" alt="">
+        </div>
+      </div>
+    </div>
+</div>    
+    
+    
+    <section class="section-features" id="feature_ID">
+           
+            <img class = "love" src ="resources/img/yeuthuong.png">
+            <div class="row-feature-detail">
+              
+                
+                    <div class="col-span-1-of-3"> 
+                        
+                       <img class = "sechia" src ="resources/img/2020-07-01%20(2).png">
+                             <h3>Góc nhìn khác về sự sẻ chia</h3>
+                             <p>                     
+                               Sự thấu hiểu của mọi người mới chính là động lực của sự chia sẻ và là nguồn cảm hứng để ngày càng có thêm nhiều những tấm lòng cởi mở hơn, bao dung hơn với các hoàn cảnh khó khăn trong cuộc sống.
+                             </p>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-span-1-of-3">
+                         <img class = "sechia" src ="resources/img/2020-07-01%20(3).png">                    
+                         <h3>Tạo giá trị mới bằng hướng đi mới</h3>
+                             <p>
+                                Mọi người sẽ được cọ xát thực tế, hiểu sâu hơn về các vấn đề xã hội, cảm nhận những khó khăn của những người làm công tác cộng đồng để từ đó mỗi người với tâm huyết của mình đã cố vấn và hỗ trợ hết mình cho dự án.
+                             </p>
+                    </div>                    
+                    <br>
+                    <br>
+                    <div class="col-span-1-of-3">
+                         <img class = "sechia" src ="resources/img/2020-07-01%20(5).png"> 
+                         <h3>Niềm vui lan tỏa từ sự thấu hiểu</h3>
+                            <p>
+                                Không những được trực tiếp đóng góp cho cộng đồng, mọi người còn được khơi dậy niềm tự hào khi dám tạo sự khác biệt để mang đến cộng đồng mình đang sống những giá trị thiết thực, có giá trị lâu dài và mang tính bền vững.
+                            </p>
+                    </div>                
+            </div>
+           
+        </section>
+    
+        <img class = "bantay" src="resources/img/bantay.png" alt = "photo"> 
+    
+    
+    
+ <!--       <div class="slideshow-container">
+            <h2 class = "nameslideshow">
+                NHỮNG HOẠT ĐỘNG TÌNH NGUYỆN GIÚP ĐỠ CÁC EM NHỎ VỚI CẢ TRÁI TIM
+            </h2>
+            <div class="mySlides fade">
+              <img src="resources/css/img/tretuky_1.jpg" style="width:200%">              
+            </div>
+
+            <div class="mySlides fade">
+              <img src="resources/css/img/taychanchampt.png" style="width:200%">              
+            </div>
+
+            <div class="mySlides fade">
+              <img src="resources/css/img/khiemthinh.png" style="width:200%">              
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="resources/css/img/tcchampt.png" style="width:200%">              
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="resources/css/img/trekhiemthinh2.jpg" style="width:200%">              
+            </div>           
+            
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(0)"></span> 
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>                       
+        </div>    
+    -->
+        
+    
+        <script>
+          //khai báo biến slideIndex đại diện cho slide hiện tại
+          var slideIndex;
+          // KHai bào hàm hiển thị slide
+          function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                 slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+
+              slides[slideIndex].style.display = "block";  
+              dots[slideIndex].className += " active";
+              //chuyển đến slide tiếp theo
+                slideIndex++;
+              //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+              if (slideIndex > slides.length - 1) {
+                slideIndex=0;
+              }    
+              //tự động chuyển đổi slide sau 5s
+              setTimeout(showSlides, 5000);
+          }
+          //mặc định hiển thị slide đầu tiên 
+          showSlides(slideIndex = 0);
+
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+        </script>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+    <div>
+      <h1 class="HEAD2">VỀ NIỀM TIN</h1>
+            <img src="resources/img/quythienviet.png" alt="" class="photos-ve-niem-tin">
+        
+        <br>
+        <br>         
+
+            <h6>VỚI CẢ TÂM TÌNH</h6>
+                <div class = "noidung">
+                    <p>
+                    Tổ Chức Niềm Tin Tổ Chức Niềm TinTổ Chức Niềm TinTổ Chức Niềm TinTổ Chức
+                      Niềm TinTổ Chức Niềm TinTổ Chức Niềm TinTổ Chức Niềm TinTổ Chức Niềm 
+                      TinTổ Chức Niềm TinTổ Chức Niềm TinTổ Chức Niềm TinTổ Chức Niềm TinTổ 
+                      Chức Niềm TinTổ Chức Niềm TinTổ Chức Niềm Tin.
+                        <br>
+                        <br>
+                      Quỹ hoạt động không vì lợi nhuận, trên nguyên tắc tự tạo vốn, nhằm các
+                      mục đích: Nhân đạo, từ thiện; Hỗ trợ và khuyến khích phát triển văn hóa,giáo dục, y tế, thể dục thể thao, khoa học; Phát triển cộng đồng phù hợp quy định của Pháp luật.
+                        <br>
+                        <br>
+                      Bằng nỗ lực và thành quả của những chương trình thiện nguyện đã được Quỹ Thiện Tâm triển khai liên tục trong nhiều năm qua, chúng tôi luôn tâm niệm việc cho đi không chỉ là vật chất với tấm lòng nhân ái, mà còn tiếp thêm động lực và trao những cơ hội, trao những giải pháp tích cực.
+                        <br>
+                        <br>
+                      Vì chúng tôi hiểu rằng: làm việc Thiện không chỉ đơn giản là
+                        <strong>SỰ CHO ĐI</strong>, mà phải kiến tạo
+                        <strong>SỰ THAY ĐỔI</strong>.
+                      <br>
+                      <br>
+                        <a href="http://tamnguyenviet.vn/voi-ca-tam-tinh/" title="" target="_self">Xem thêm</a>
+                    </p>
+                </div>
+    
+
+        </div>
+    
+    
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+    <!-- hết phần 2 -->
+    
+    
+    <!-- phần 1 -->
+    <div class="phan1">
+      <h1 class="HEAD">CÁC HỘI CHỨNG BỆNH NGUY HIỂM THƯỜNG GẶP Ở TRẺ</h1>
+      <div class="servicebox">
+        <div class="part1">
+          <div class="line1">
+            <div>
+              <img src="resources/css/img/thoi-trang-be-gai-80.png" alt="" width="68" height="80"/>
+              <p><strong>Trẻ Tự Kỷ</strong></p>
+                <br>
+              <p>
+                Tự kỷ là một tình trạng có những dấu hiệu nhận thức khác với mọi người, đặc 
+                biệt luôn gặp khó khăn trong việc tương tác với mọi người xung quanh, những
+                khó khăn này luôn  được diễn biến trong suốt thời gian dài.
+              </p>
+            </div>
+
+            <div class="div2">             
+              <img src="resources/css/img/baby.png" alt="" width="68" height="80"/>
+              <p><strong>Trẻ Khiếm Thính</strong></p>
+                <br>
+              <p>
+                Dấu hiệu của Tự Kỷ là hình thức :”Phổ:” còn Khiếm thính/ Điếc lại được xác định theo mức độ mất thính lực, vì vậy không có phương pháp nhất quán phù hợp với trẻ.
+              </p>
+            </div>
+              
+            <div class="div3">
+              <img src="resources/css/img/children.gif" alt="" width="100%" height="300"/>
+              <img src="resources/css/img/nhayday.gif" alt="" width="100%" height="300"/>  
+            </div>
+            
+          </div>
+        </div>
+        <div class="part2">
+          <div>
+            <img src="resources/css/img/unnamed.png" alt="" width="68" height="80"/>
+            <p><strong>TRẺ TỔN THƯƠNG NÃO</strong></p>
+              <br>
+            <p>
+              Quỹ tài trợ cho các cá nhân, hộ gia đình nghèo, gia đình chính
+              sách,gia đình có hoàn cảnh đặc biệt khó khăn, người già neo đơn,
+              trẻ mồ côi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- hết phần 1 -->
+     
+    
+    <h1 class="nhungcauchuyen">NHỮNG CÂU CHUYỆN</h1>
+    
+    <div class="caccauchuyen">
+        <div class = "phan1cauchuyen">
+             <img src="resources/css/img/tretuky.png" alt="Trẻ tự kỷ photos" class="tretuky1">
+
+            <div class = "cauchuyen1">
+
+                <h3 class = "tencauchuyen1"> Bé Duy Hải - mắc chứng tự kỷ. </h3>
+
+                    <p>
+                        Chặng đường đưa đứa con bé bỏng đi châm cứu từ 18 tháng, cho đến thời điểm hiện tại là cả một chặng đường đầy bão táp, đã làm phai nhòa ít nhiều màu áo bộ đội của người cha. Đó là những ngày mà bố mẹ Duy Hải đau thắt lòng khi buộc phải xích chân, xích tay con vào ghế. Bởi cứ xểnh ra là cậu bé sẽ lao mình ra ngoài đường mà không có ai kiểm soát hoặc cứ hễ khó chịu trong người là con lại đánh đấm, cào cấu bố mẹ.
+                        <br>
+                        <br>
+                        “Chưa thể cất lên tiếng nói, Duy Hải gặp rất nhiều khó khăn trong giao tiếp. Có lẽ vì vậy mà con hung tính, thường xuyên rơi vào trạng thái bực tức, cáu giận; thậm chí làm cho gia đình và những người kề cận chăm sóc con trở nên ức chế và dễ nổi nóng. Cô thương con một thì cũng thương cho bố mẹ con mười. Thương cho những lần bố con không kiềm chế nổi bản thân mà đã phạt con những cái tát trời giáng rồi ngay lập tức, ông trở nên cực kỳ lúng túng, hối hận,” tác giả Thanh Tùng dẫn lời thạc sỹ Nguyễn Vân Hà kể về những nỗi gian truân của các bậc phụ huynh trẻ mắc chứng tự kỷ cố gắng trong hành trình đưa các bé tiến bộ từng ngày.
+                        <br>
+                        <br>
+
+                        <a href="http://tamnguyenviet.vn/voi-ca-tam-tinh/" title="/Xem thêm" class="xemthem" target="_self">Xem thêm</a>
+
+                    </p>
+
+                </div>
+
+            </div>
+    
+            <h3 class = "minhhoaanh"> Ảnh minh họa - tên của bé đã được thay đổi !</h3>
+    
+        <div class = "phan2cauchuyen">
+             <img src="resources/css/img/trekhiemthinh4.png" alt="Trẻ tự kỷ photos" class="trekhiemthinh2">
+
+            <div class = "cauchuyen2">
+
+                <h3 class = "tencauchuyen2"> Bé Thanh Lâm - mắc chứng khiếm thính. </h3>
+
+                    <p>
+                       Tháng 4 năm 2014, khi con đang theo học tại một lớp hòa nhập trường Xã Đàn – trường dành cho trẻ Khiếm thính, chúng tôi được giới thiệu đến dự án IDEO và NNKH. Hàng tuần, Lâm được thầy cô tới nhà dạy NNKH và được bố mẹ đưa tới trung tâm NNKH để  học chung với các trẻ Điếc khác. Chúng tôi cũng tham gia các lớp học NNKH dành cho bố mẹ. Khi học theo phương pháp này, Lâm nhận thức rất nhanh, khả năng học tập của con không hề thua kém những  trẻ  bình  thường.  Đôi khi, con thể hiện sự thông minh lanh lợi đến mức các thầy cô cũng phải ngạc nhiên. 
+                        <br>
+                        <br>
+                        Cuộc sống của chúng tôi đã thay đổi và Lâm giờ đã trở nên tự lập hơn trước rất nhiều. Con bây giờ rất hạnh phúc và không còn sợ đến trường nữa. Em gái nhỏ xíu của Lâm cũng biết làm  ký hiệu với bàn tay nhỏ xíu, Lâm  rất thích thú. Khi cả gia đình 4 người ngồi quây quền bên nhau và học NNKH, chúng tôi cảm thấy rất vui vẻ  và ngôi nhà tràn ngập tiếng cười.
+                        <br>
+                        <br>
+
+                        <a href="http://tamnguyenviet.vn/voi-ca-tam-tinh/" title="/Xem thêm" class="xemthem" target="_self">Xem thêm</a>
+
+                    </p>
+
+                </div>
+            
+
+            </div>
+        <h3 class = "minhhoahinhanh2"> Ảnh minh họa - tên của bé đã được thay đổi !</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class = "phan3cauchuyen">
+        
+        <div class = "cauchuyen3">
+            <h3 class = "tieudecauchuyen3"> Bé Thanh Hiền - mắc chứng bại não</h3>
+            
+            <p>
+                        Trở thành đứa trẻ mồ côi mẹ, Hiền lớn lên cùng bố và chị gái trong một căn nhà đơn sơ mộc mạc. Lên 1 tuổi, Hiền phát bệnh động kinh, bị hộp sọ hẹp và toàn bộ khoảng thời gian sau đó, em phải sống chung với 2 căn bệnh quái ác.
+                        <br>
+                        <br>
+                        Khi Hiền lớn lên, gia đình phát hiện một nửa cơ thể của em không thể cử động và không có cảm giác với mọi vật xung quanh. Năm 12 tuổi, thời gian Hiền và bố ở bệnh viện còn nhiều hơn ở nhà khi tiến hành các quá trình trị liệu, cứ một ngày ở nhà, một ngày lại ở bệnh viện.
+                        <br>
+                        <br>
+
+                        Đến nay, toàn bộ cơ thể của Hiền chỉ có cánh tay trái là hoạt động tốt, chuyện sinh hoạt, học hành vì thế rất khó khăn. Mãi tới năm 10 tuổi, Hiền mới bắt đầu được đi học lớp 1.
+                        <br>
+                        <br>
+
+                        Bắt đầu chậm hơn các bạn 4 năm nhưng em luôn cói đó là động lực để cố gắng nhiều hơn. Ngoài việc học văn hóa, luyện viết chữ bằng chiếc tay trái run rẩy, em còn học nấu cơm, tự chăm sóc bản thân bằng cách tự vệ sinh cá nhân, tắm rửa thay quần áo, tất cả đều được thực hiện với duy nhất một cách tay trái.
+                        <br>
+                        <br>
+                
+                <a href="http://tamnguyenviet.vn/voi-ca-tam-tinh/" title="/Xem thêm" class="xemthem" target="_self">Xem thêm</a>
+            </p>
+            
+        
+        </div>
+        <img src="resources/css/img/trebainao2.png" alt="Trẻ bại não " class="trebainao3">
+        </div>
+        <h3 class = "minhhoaanh3"> Ảnh minh họa - tên của bé đã được thay đổi !</h3>
+    
+    
+  
+    </div>
+    
+    <h1 class = "tamnhin">TẦM NHÌN</h1>
+    
+    <img src="resources/css/img/tamnhin.png" alt="tamnhin photo" class="tamnhin">
+    
+    <div class = "loinoitamnhin">
+        
+        <p> Chúng tôi sẽ phấn đấu trở thành một tổ chức phi lợi nhuận tại Việt Nam , hỗ trợ trẻ khuyết tật và gia đình của trẻ được hòa nhập vào xã hội , bằng chính sự quyết tâm và sự tự tin của gia đình.
+        
+        </p>
+        
+        
+    
+    </div>
+    
+    <h1 class = "sumenh">
+            SỨ MỆNH
+        </h1>
+    
+    <img src="resources/css/img/lovetree2.png" alt="Cây tình thương" class="caytinhthuong">
+    
+    <div class = "loiketthuc">
+        
+        <p>Tổ chức niềm tin sẵn sàng hợp tác cùng các tổ chức xã hội để xây dựng những đề án hoạt động thiết thực, sáng tạo, những giải pháp hiệu quả nhất.
+            <br>
+        Với tinh thần độc lập và tự chủ , tổ chức Niềm Tin luôn nổ lực hết mình để cung cấp đa dạng các phương pháp để tạo ra sự thay đổi nhận thức cho trẻ khuyết tật và gia đình của trẻ trên con đường hòa nhập vào xã hội.
+        
+        </p>
+        
+        
+        <br>
+        <p>Chúng tôi hy vọng có thể truyền cảm hứng cho mọi thế hệ, trở thành tổ chức tình thương tiên phong trong cả nước, nơi những điều tốt được lan tỏa để thúc đẩy những suy nghĩ và hành động hướng thiện.</p>
+    
+    </div>
+    
+    <div class="Hoatdong">          
+           
+            <h3 class = "tenhoatdong">TIN NỔI BẬT</h3>   
+        
+    </div>
+    
+    <div class="phan3">
+        
+      <div>
+        <img src="http://tamnguyenviet.vn/wp-content/uploads/2020/04/IMG_1587371244695_1587440102811-2-180x180.jpg"
+          alt="" width="180" height="180"/><a href="#"><br />NỐI NHỊP YÊU THƯƠNG ĐẾN VỚI BÌNH ĐỊNH</a>
+      </div>
+      <div>
+        <img
+          src="http://tamnguyenviet.vn/wp-content/uploads/2020/04/MAU-THU-CAM-ON-CHUNG-DUA-LEN-WEBSITE-180x180.jpg"
+          alt=""
+          width="180"
+          height="180"
+        /><a href="#"><br />THƯ CÁM ƠN CỦA TỔ CHỨC NIỀM TIN</a>
+      </div>
+      <div>
+        <img
+          src="http://tamnguyenviet.vn/wp-content/uploads/2020/03/hinh-1-180x180.jpg"
+          alt=""
+          width="180"
+          height="180"
+        /><a href="#"
+          ><br />CHUNG TAY ĐẨY MẠNH PHÒNG, CHỐNG DỊCH COVID-19, BẢO VỆ SỨC KHỎE
+          CỘNG ĐỒNG</a
+        >
+      </div>
+      <div>
+        <img
+          src="resources/img/hinh-2.jpg"
+          alt=""
+          width="180"
+          height="180"
+        /><a href="#"
+          ><br />TÀI TRỢ XE LĂN CHO NGƯỜI KHUYẾT TẬT TẠI TỈNH BÌNH ĐỊNH</a
+        >
+      </div>
+      <div>
+        <img
+          src="resources/img/hinh.jpg"
+          alt=""
+          width="180"
+          height="180"
+        /><a href="#"
+          ><br />TRAO TẶNG THẺ BHYT – MÓN QUÀ ĐẦU XUÂN 2020 CHO HỘ CẬN NGHÈO TẠI
+          TỈNH BÌNH ĐỊNH</a
+        >
+      </div>
+      <div>
+        <img
+          src="resources/img/images.jpg"
+          alt=""
+          width="180"
+          height="180"
+        /><a href="#"
+          ><br />VỀ VIỆC TỔ CHỨC KHÁM SÀNG LỌC BỆNH LÝ HÔ HẤP MIỄN PHÍ</a
+        >
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+  
+    
+    <footer>
+      <div class="footer">
+        <div class="img">
+          <img class = "niemtin3"  src="resources/img/believe4.png" alt= "footer"/>
+            <img class = "niemtin4"  src="resources/img/logo_niemtin.jpg" alt= "logo"/>
+            
+        </div>
+        <div class="row1">
+          <h5>GIỚI THIỆU</h5>
+          <ul>
+            <li>Tài chính</li>
+            <li>Thành viên</li>
+            <li>Ban chủ nhiệm</li>
+          </ul>
+        </div>
+        <div class="row2">            
+          <h5>Trẻ em</h5>
+          <ul>
+            <li>Trẻ tự kỷ</li>
+            <li>Trẻ khiếm tính</li>
+            <li>Trẻ khuyết tật</li>
+          </ul>          
+        </div>
+        <div class="row3">
+          <h5>Hoạt động</h5>
+          <ul>
+            <li>Dự án</li>
+            <li>Quy chế</li>
+          </ul>  
+        </div>
+        <div class="row4">
+          <h5>KẾT NỐI </h5>          
+              <a class="icon"><p>Chia sẻ trên:</p></a>
+              <a href="https://www.facebook.com/"><ion-icon name="logo-facebook" class="icon-app" id="facebook"></ion-icon></a>                    
+              <a href="https://www.twitter.com/"><ion-icon name="logo-twitter" class="icon-app" id="twitter"></ion-icon></a>
+              <a href="https://www.youtube.com/"><ion-icon name="logo-youtube" class="icon-app" id="youtube"></ion-icon></a>   
+        </div>
+        <div class="row5">          
+            <h5>NHẬN THÔNG BÁO</h5>
+            <input id="Newsletters_email" class="input-email" placeholder="Nhập email" title="Email" name="Newsletters[email]" type="text" maxlength="100" value=""/>
+                    
+          <div>
+            <form action="#">
+                <button class="btn-send">GỬI</button>
+            </form>    
+          </div>
+            <div class = "footertag">
+                <p>Website được thiết kế bởi trường Đại học Kinh tế - Tài chính (UEF) 
+                    <br>
+                    2020 - Bản quyền thuộc về Tổ chức niềm tin
+                    <br>
+                    Địa chỉ : 141-145 Điện Biên Phủ , Phường 17 quận Bình Thạnh , TP.HCM
+                    <br> 
+                    Fax : 0258.340.340
+                    <br>
+                    SĐT : 0865096808
+                </p>
+                <a class = "click" href="http://uef.edu.vn">Thông tin liên hệ</a>
+            </div>
+        </div>
+    
+      </div>
+    </footer>   
+
+    <script src="" async defer></script>
+    
+    
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>   
+</body>
+</html>
